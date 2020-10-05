@@ -1,13 +1,13 @@
-var items = [5,3,7,6,2,9];
+const items = [5,3,7,6,2,9];
 function swap(items, leftIndex, rightIndex){
-    var temp = items[leftIndex];
+    const temp = items[leftIndex];
     items[leftIndex] = items[rightIndex];
     items[rightIndex] = temp;
 }
 function partition(items, left, right) {
-    var pivot   = items[Math.floor((right + left) / 2)], //middle element
-        i  = left,
-        j  = right; 
+    const pivot = items[Math.floor((right + left) / 2)]; //middle element
+    let i = left;
+    let j = right; 
     while (i <= j) {
         while (items[i] < pivot) {
             i++;
@@ -25,7 +25,7 @@ function partition(items, left, right) {
 }
 
 function quickSort(items, left, right) {
-    var index;
+    let index;
     if (items.length > 1) {
         index = partition(items, left, right);
         if (left < index - 1) {
@@ -38,7 +38,7 @@ function quickSort(items, left, right) {
     return items;
 }
 
-var sortedArray = quickSort(items, 0, items.length - 1);
+const sortedArray = quickSort(items, 0, items.length - 1);
 console.log(sortedArray); 
 
 /*Input : 5 3 7 6 2 9
